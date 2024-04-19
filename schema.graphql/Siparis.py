@@ -18,7 +18,7 @@ class SiparisType(graphene.ObjectType):
 class SiparisMutasyon(graphene.Mutation):
     class SiparisEkle(graphene.Mutation):
         class Arguments:
-            sip_id=graphene.ID(required=True)
+            sip_id=graphene.ID(required=True,default=0)
             mus_id=graphene.ID(required=True)
             siparis_tarihi=graphene.DateTime(required=True)
             teslim_tarihi=graphene.DateTime(required=True)
@@ -28,7 +28,7 @@ class SiparisMutasyon(graphene.Mutation):
 
     class SiparisGuncelle(graphene.Mutation):
         class Arguments:
-            sip_id=graphene.ID(required=True)
+            sip_id=graphene.ID(required=True,default=0)
             mus_id=graphene.ID(required=True)
             siparis_tarihi=graphene.DateTime(required=True)
             teslim_tarihi=graphene.DateTime(required=True)

@@ -7,7 +7,7 @@ class SiparisDetayType(DjangoObjectType):
     class Meta:
         model = SiparisDetay
 
-class SiaprisDetayType(graphene.ObjectType):
+class SiparisDetayType(graphene.ObjectType):
     siparis=graphene.String(required=True)
     urun=graphene.String(required=True)
     miktar=graphene.Int(required=True)

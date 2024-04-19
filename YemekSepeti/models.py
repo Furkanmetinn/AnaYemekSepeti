@@ -56,7 +56,7 @@ class Urun(models.Model):
         return self.name
     
 class Siparis(models.Model):
-    sip_id=models.IntegerField()
+    sip_id=models.IntegerField(default=0)
     mus_id = models.ForeignKey(Musteri, on_delete=models.CASCADE)
     siparis_tarihi = models.DateTimeField(auto_now_add=True)
     teslim_tarihi = models.DateField()
@@ -64,7 +64,7 @@ class Siparis(models.Model):
     durum = models.CharField(max_length=20, choices=[("Bekliyor", "Bekliyor"), ("Onaylandı", "Onaylandı"), ("Tamamlandı", "Tamamlandı"), ("İptal Edildi", "İptal Edildi")])
 
     def __str__(self):
-        return self.sip_id
+        return str(self.sip_id)
     
 class SiparisDetay(models.Model):
     siparis = models.ForeignKey(Siparis, on_delete=models.CASCADE, related_name='siparis_detaylari')
